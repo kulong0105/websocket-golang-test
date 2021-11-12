@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: websocket-golang
+  name: websocket-golang
+spec:
+  selector:
+    matchLabels:
+      app: websocket-golang
+  template:
+    metadata:
+      labels:
+        app: websocket-golang
+    spec:
+      containers:
+      - image: websocket-golang-test:v0.1
+        imagePullPolicy: IfNotPresent
+        name: websocket-golang
+        #       command: ["/bin/bash"]
+        #       args: ["-c", "sleep infinity"]
+
